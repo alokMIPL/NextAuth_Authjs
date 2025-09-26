@@ -13,8 +13,8 @@ import { redirect } from 'next/navigation';
 const DashBoard = async () => {
 
   const session = await getSession();
-  console.log("**********",session)
-    console.log("**********",session?.user);
+  console.log("********** dashboard",session)
+    console.log("********** dashboard",session?.user);
 
     const user = session?.user;
     if (!user) redirect("/login");

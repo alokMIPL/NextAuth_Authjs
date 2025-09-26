@@ -3,15 +3,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import React from "react";
-import { auth } from "../../../auth";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/getSession";
 
 const Register = async () => {
 
   const session = await getSession()
-    console.log("**********",session)
-    console.log("**********",session?.user);
+    console.log("********** register",session)
+    console.log("********** register",session?.user);
   
     const user = session?.user;
     if (user) redirect("/");

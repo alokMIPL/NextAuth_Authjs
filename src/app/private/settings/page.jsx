@@ -7,8 +7,8 @@ import React from 'react'
 const Settings = async () => {
 
   const session = await getSession();
-  console.log("**********",session)
-  console.log("**********",session?.user);
+  console.log("********** settings ",session)
+  console.log("********** settings",session?.user);
 
   const user = session?.user;
   if (!user) redirect("/login");

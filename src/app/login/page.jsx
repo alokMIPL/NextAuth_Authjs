@@ -4,15 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import Link from "next/link";
-import { auth, signIn } from "../../../auth";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/getSession";
+import { signIn } from "../../../auth";
 
 const Login = async () => {
 
   const session = await getSession()
-  console.log("**********",session)
-  console.log("**********",session?.user);
+  console.log("********** login kola",session)
+  console.log("********** login kola",session?.user);
 
   const user = session?.user;
   if (user) redirect("/");

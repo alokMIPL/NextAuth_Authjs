@@ -6,10 +6,11 @@ import { signOut } from "../../../auth";
 const Navbar = async () => {
 
   const session = await getSession();
-  console.log("**********",session)
-  console.log("**********",session?.user);
+  console.log("********** nav",session)
+  console.log("********** nav",session?.user);
 
   const user = session?.user;
+  console.log(user, "!!!!!!!!!!user in nav")
 
 
   return (
@@ -47,6 +48,14 @@ const Navbar = async () => {
                 </Link>
               </li>
             )}
+
+            <li className="mt-2">
+              <Button type="submit" className="text-black bg-white" variant={"ghost"}>
+                <span>{user.name || user.firstname}</span>
+                <span className="uppercase" >{user.role}</span>
+              </Button>
+              
+            </li>
 
             <form
               action={async () => {
